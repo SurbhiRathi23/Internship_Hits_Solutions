@@ -1,0 +1,157 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+  <link href="https://fonts.googleapis.com/css2?family=Sansita+Swashed&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+  <link href="https://fonts.googleapis.com/css?family=Lato|Patua+One&display=swap" rel="stylesheet">
+  <link rel='stylesheet' href='https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css'>
+  
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  
+  <link href="elements.css" rel="stylesheet">
+  <script src="my_js.js"></script>
+  <script >
+    function VALIDATION() {
+      var name=document.forms["orgform"]["cname"];
+      var gstnumber=document.forms["orgform"]["cnumber"];
+
+      if(name.value==""){
+        window.alert("Company name cannot be blank");
+        name.focus(); 
+        return false; 
+      }
+
+
+      if(gstnumber.value==""){
+        window.alert("GST number cannot be blank");
+        gstnumber.focus(); 
+        return false; 
+      }
+
+    }
+
+    function div_show() { 
+      document.getElementById('abc').style.display = "block";
+            // var v = document.getElementsByClassName('card-group');
+            // v.className += "addCSS"; 
+            // document.getElementById('abc').style.display = "block";
+        }
+
+  </script>
+
+
+
+</head>
+<body id="body">
+<nav class="navbar">
+    <div class="nav_icon" onclick="toggleSidebar()">
+      <i class="fa fa-bars" aria-hidden="true"></i>
+    </div>
+    <div class="navbar__left">
+      <a href="#">__</a>
+    </div>
+    <div class="navbar__right">
+      <a href="#" style="margin-top: 7px;">
+
+        Home&nbsp;
+
+      </a>
+      <a href="#">
+        <br>
+        <p id="popup" onclick="div_show()"> <span>Add Organisation&nbsp;<i class="fa fa-plus-square"></i></span></p>
+      </div>
+
+      <a href="logout.php" class="logout">Logout</a>
+
+
+    </nav>
+
+  <div id="abc">
+
+
+    <form action="addorgtodb.php" id="form" method="post" name="orgform" onsubmit="return VALIDATION()">
+
+      <i id="close" class="fa fa-times" onclick ="div_hide()"></i>
+
+      <h2>Add Organisation</h2>
+      <hr>
+      <input id="cname" name="cname" placeholder="Name" type="text">
+      <input id="cnumber" name="cnumber" placeholder="GST Number" type="text">
+      <br>
+      <br>
+
+      <input type="submit" value="submit" name="submit">  
+    </form>
+  </div>
+    <br>
+    <br>
+    <br>
+
+    <div class="container">           
+      <div class="row">          
+        <div id="main_cards"  class="card-group" style="margin: 0 auto;">
+
+
+
+          <div class="col-lg-3 col-md-12 col-sm-12">
+            <div class="card">  
+            <i class="fa fa-users crd" style="background-color: rgb(108, 171, 113); height: 140px;" aria-hidden="true"></i>
+            <div class="card-body"><b>Company : planatir</b><br><br>GST : 9876<br>2147483647<br><b>mvalar213@gmail.com</b><br><br><br>
+         
+            </div>
+            </div>
+          
+            <a href="dashboard.php?orggstnum=9876&name=planatir&img=aml.png" class="btn btn-outline-success">&nbspView Dashboard&nbsp</a></div> <div class="col-lg-3 col-md-12 col-sm-12">
+            <div class="card">  
+            <i class="fa fa-users crd" style="background-color: rgb(108, 171, 113); height: 140px;" aria-hidden="true"></i>
+            <div class="card-body"><b>Company : google</b><br><br>GST : 11111<br>2147483647<br><b>rm@gmail.com</b><br><br><br>
+            
+            </div>
+            </div><a href="dashboard.php?orggstnum=11111&name=google&img=898410.jpg" class="btn btn-outline-success">&nbspView Dashboard&nbsp</a></div> <div class="col-lg-3 col-md-12 col-sm-12">
+            <div class="card">  
+            <i class="fa fa-users crd" style="background-color: rgb(108, 171, 113); height: 140px;" aria-hidden="true"></i>
+            <div class="card-body"><b>Company : facebook</b><br><br>GST : 12345<br>2147483647<br><b>rm@gmail.com</b><br><br><br>
+            
+            </div>
+            </div><a href="dashboard.php?orggstnum=12345&name=facebook&img=7wg.jpg" class="btn btn-outline-success">&nbspView Dashboard&nbsp</a></div> <div class="col-lg-3 col-md-12 col-sm-12">
+            <div class="card">  
+            <i class="fa fa-users crd" style="background-color: rgb(108, 171, 113); height: 140px;" aria-hidden="true"></i>
+            <div class="card-body"><b>Company : tesla</b><br><br>GST : 123789<br>123456789<br><b>rishabh.mah22@gmail.com</b><br><br><br>
+            
+            </div>
+            </div><a href="dashboard.php?orggstnum=123789&name=tesla&img=Capture7.png" class="btn btn-outline-success">&nbspView Dashboard&nbsp</a></div>      </div>
+    </div>
+  </div>
+  <br>
+  <br>
+  <!-- <div class="container">
+    <div class="row">
+      <div class="col-lg-3 col-md-12 col-sm-12">
+       
+      
+        <a href="dashboard.php?orggstnum=9876&name=planatir&img=aml.png" class="btn btn-outline-success">&nbspView Dashboard&nbsp</a>
+      </div> 
+      
+      <div class="col-lg-3 col-md-12 col-sm-12">
+        <a href="dashboard.php?orggstnum=11111&name=google&img=898410.jpg" class="btn btn-outline-success">&nbspView Dashboard&nbsp</a>
+      </div> 
+
+        <div class="col-lg-3 col-md-12 col-sm-12">
+       <a href="dashboard.php?orggstnum=12345&name=facebook&img=7wg.jpg" class="btn btn-outline-success">&nbspView Dashboard&nbsp</a>
+      </div> 
+      <div class="col-lg-3 col-md-12 col-sm-12">
+        <a href="dashboard.php?orggstnum=123789&name=tesla&img=Capture7.png" class="btn btn-outline-success">&nbspView Dashboard&nbsp</a></div>     
+    </div>
+  </div> -->
+</body>
+</html>
